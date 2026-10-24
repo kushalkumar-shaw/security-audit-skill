@@ -1,0 +1,44 @@
+[
+  {
+    "role": "system",
+    "content": {
+      "protocol": "AISOP V1.0.0",
+      "axiom_0": "Human_Sovereignty_and_Wellbeing",
+      "id": "standalone_audit_fixture",
+      "name": "Standalone Audit Fixture",
+      "version": "1.0.0",
+      "summary": "A minimal program for static format-recognition tests.",
+      "flow_format": "jsonflow",
+      "loading_mode": "normal",
+      "tools": [],
+      "params": {},
+      "system_prompt": ""
+    }
+  },
+  {
+    "role": "user",
+    "content": {
+      "instruction": "RUN aisop.main",
+      "aisop": {
+        "main": {
+          "emit": {
+            "next": [
+              "end_node"
+            ]
+          },
+          "end_node": {}
+        }
+      },
+      "functions": {
+        "emit": {
+          "step1": "sys.io.print('AISOP_FIXTURE_ONLY')",
+          "execute_mode": "inline"
+        },
+        "end_node": {
+          "step1": "Finish the fixture task.",
+          "execute_mode": "inline"
+        }
+      }
+    }
+  }
+]

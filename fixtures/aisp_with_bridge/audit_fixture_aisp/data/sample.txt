@@ -1,0 +1,1 @@
+AISP_FIXTURE_ONLY: synthetic text; no secrets or real targets.

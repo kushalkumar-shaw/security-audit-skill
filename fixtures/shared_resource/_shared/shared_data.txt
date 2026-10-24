@@ -1,0 +1,1 @@
+SHARED_FIXTURE_ONLY: synthetic shared resource text.

@@ -45,6 +45,8 @@ Multiple runs against the same repo are additive. The skill uses prior ledgers a
 | `validate-findings.test.cjs` | Findings-validator tests and producer-compatible fixture checks |
 | `validate-coverage-ledger.cjs` | Zero-dependency validator for `coverage-ledger.json` in Phases 1–5 |
 | `validate-coverage-ledger.test.cjs` | Coverage-ledger validator tests |
+| `discover-aisp.cjs` | Zero-dependency discovery and structural summary helper for AISOP programs and AISP packages in Phase 1 |
+| `discover-aisp.test.cjs` | Tests for AISOP/AISP discovery, path confinement, preflight limits, and format recognition |
 
 ## Installation
 

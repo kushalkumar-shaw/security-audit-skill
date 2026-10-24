@@ -1,0 +1,70 @@
+[
+  {
+    "role": "system",
+    "content": {
+      "protocol": "AISP V1.0.0",
+      "axiom_0": "Human_Sovereignty_and_Wellbeing",
+      "id": "shared_fixture_aisp",
+      "name": "Shared Resource Fixture",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "summary": "Demonstrate a shared resource mapped to _shared root.",
+      "flow_format": "mermaid",
+      "loading_mode": "node",
+      "tools": [
+        "filesystem"
+      ],
+      "params": {},
+      "system_prompt": ""
+    }
+  },
+  {
+    "role": "user",
+    "content": {
+      "instruction": "STRICTLY OBEY aisp_contract; then RUN aisop.main",
+      "aisp_contract": {
+        "profile": "aisp.skill.v1",
+        "invocation": {
+          "mode": "manual_only",
+          "when_to_use": [
+            "Demonstrating shared resource resolution."
+          ],
+          "when_not_to_use": [
+            "General audit."
+          ]
+        },
+        "non_negotiable": [],
+        "discovery": {
+          "category": "testing",
+          "tags": [
+            "shared-resource"
+          ]
+        },
+        "risk_level": "low",
+        "resources": [
+          {
+            "id": "shared_data",
+            "path": "shared_data.txt",
+            "kind": "data",
+            "mode": "read_only",
+            "scope": "shared"
+          }
+        ]
+      },
+      "aisop": {
+        "main": "graph TD\n    inspect[Read shared fixture] --> end_node((End))"
+      },
+      "functions": {
+        "inspect": {
+          "step1": "sys.io.read('_shared/shared_data.txt') -> data",
+          "step2": "sys.io.print(data)",
+          "execute_mode": "inline"
+        },
+        "end_node": {
+          "step1": "Finish the fixture task.",
+          "execute_mode": "inline"
+        }
+      }
+    }
+  }
+]
